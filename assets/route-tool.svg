@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240">
+<defs>
+<pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse">
+<circle cx="1" cy="1" r=".65" fill="#8aa5bc"/>
+</pattern>
+<pattern id="h" width="5" height="5" patternUnits="userSpaceOnUse">
+<path d="M-1 1l2 -2m-1 6l5 -5m-1 6l2 -2" stroke="#91b4d2" stroke-width=".8"/>
+</pattern>
+</defs>
+<rect width="360" height="240" fill="#e6f0f8"/>
+<rect width="360" height="240" fill="url(#grid)"/>
+<path d="M-18 112 Q54 175 112 146 T223 106 Q308 99 380 15" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 119 Q54 182 112 153 T223 113 Q308 106 380 22" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 126 Q54 189 112 160 T223 120 Q308 113 380 29" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 133 Q54 196 112 167 T223 127 Q308 120 380 36" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 140 Q54 203 112 174 T223 134 Q308 127 380 43" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 147 Q54 210 112 181 T223 141 Q308 134 380 50" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 154 Q54 217 112 188 T223 148 Q308 141 380 57" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 161 Q54 224 112 195 T223 155 Q308 148 380 64" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 168 Q54 231 112 202 T223 162 Q308 155 380 71" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 175 Q54 238 112 209 T223 169 Q308 162 380 78" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M-18 182 Q54 245 112 216 T223 176 Q308 169 380 85" fill="none" stroke="#95b3c8" stroke-width="0.85" stroke-linejoin="round" stroke-linecap="round" />
+<path id="river" d="M-8 177 Q52 217 110 187 T219 148 Q289 140 367 60 L367 82 Q298 171 228 170 T122 210 Q51 247 -8 207Z" fill="#4b97d5" stroke="none" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" />
+<g id="footprints" fill="#c0d4e1" stroke="#7793aa" stroke-linejoin="round" transform="translate(114 5) rotate(16)">
+  <path d="M0 0h29v9H11v9H0Z"/>
+  <path d="M45 0h32v11H45Z"/>
+  <path d="M90 0h28v18h-10V9H90Z"/>
+  <path d="M135 0h36v10h-36Z"/>
+  <path d="M185 0h25v16h-10V8h-15Z"/>
+  <path d="M0 33h25v10H10v9H0Z"/>
+  <path d="M43 33h31v16H64v-7H43Z"/>
+  <path d="M91 33h29v9H91Z"/>
+  <path d="M145 33h28v16h-10v-7h-18Z"/>
+  <path d="M0 69h24v11H0Z"/>
+  <path d="M42 69h25v17H56v-8H42Z"/>
+</g>
+<path d="M24 133C64 164 101 162 132 141S173 112 195 114L220 99" fill="none" stroke="#f5faff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" />
+<path d="M24 133C64 164 101 162 132 141S173 112 195 114L220 99" fill="none" stroke="#1559ad" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 4"/>
+<circle cx="218" cy="102" r="36" fill="none" stroke="#709bbd"/>
+<circle cx="218" cy="102" r="23" fill="none" stroke="#709bbd"/>
+<path d="M206 104l13 -13 13 7 -13 15Z" fill="#1a60ae" stroke="#124179" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" />
+<circle cx="24" cy="133" r="3.5" fill="#195aa1" stroke="none"/>
+</svg>

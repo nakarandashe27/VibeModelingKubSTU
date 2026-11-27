@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вайб-проектирование · лекция в КубГТУ</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="glass.css">
+  <script src="waves.js" defer></script>
+  <script src="portrait.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="glass.js" defer></script>
+</head>
+<body>
+  <main class="preview">
+    <div class="stage" id="stage">
+      <section class="slide wave-slide ribbon" id="a" aria-labelledby="title-a">
+        <canvas class="sea" data-wave="ribbon" data-continuous aria-hidden="true"></canvas>
+        <header class="masthead">
+          <p class="timeline">Кульман <b>→</b> CAD <b>→</b> BIM <b>→</b></p>
+          <div class="marks">
+            <img src="assets/kubstu.png" alt="КубГТУ">
+            <img src="assets/icon.png" alt="Арт.Бродский">
+          </div>
+        </header>
+        <h1 class="ascii-title" id="title-a" aria-label="Вайб-проектирование"><span data-ascii>Вайб-</span><span data-ascii>проектирование</span></h1>
+        <footer class="slide-footer"><p>Искусственный интеллект в архитектуре и строительстве</p></footer>
+      </section>
+
+      <section class="slide portrait-slide speaker-profile" id="speaker" aria-labelledby="speaker-title" hidden>
+        <div class="portrait">
+          <img src="assets/portrait.webp" alt="Ярослав Уваровский">
+        </div>
+        <canvas class="portrait-grain" aria-hidden="true"></canvas>
+        <div class="marks">
+          <img src="assets/kubstu.png" alt="КубГТУ">
+          <img src="assets/icon.png" alt="Арт.Бродский">
+        </div>
+        <div class="intro">
+          <h2 id="speaker-title" aria-label="Ярослав Уваровский">Ярослав<br>Уваровский</h2>
+          <ul class="credentials">
+            <li><strong>Архитектор, руководитель AI-направления ландшафтного бюро DEREVO&nbsp;PARK</strong></li>
+            <li>Преподаватель школы Арт.Бродский по&nbsp;нейросетям</li>
+            <li>Автор Telegram-канала <a href="https://t.me/na_karandashe27" target="_blank" rel="noopener">«nakarandashé»</a> про&nbsp;ИИ для&nbsp;архитектора</li>
+            <li>Студент магистратуры СПбГАСУ, профиль «Дизайн архитектурной среды»</li>
+            <li><strong>Бакалавр КубГТУ</strong> по направлению «Строительство», профиль «Промышленное и гражданское строительство».</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="slide lecture-page audience-question" id="question" data-tone="ink" aria-labelledby="question-title" hidden>
+        <p class="section-name">Разговор с залом</p>
+        <h2 id="question-title">Что мешает применять ИИ в&nbsp;вашем проекте?</h2>
+        <p class="question-prompt" aria-live="polite">Вспомните последнюю работу. На каком шаге вы хотели попробовать ИИ и что вас остановило?</p>
+        <div class="answer-list" role="group" aria-label="Варианты ответа"><button type="button" aria-pressed="false">Не понимаю, с какой задачи начать</button><button type="button" aria-pressed="false">Трудно управлять результатом</button><button type="button" aria-pressed="false">Привычным способом быстрее</button><button type="button" aria-pressed="false">Доступ, стоимость или настройка</button><button type="button" aria-pressed="false">Уже использую ИИ</button></div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="task" data-tone="ice" aria-labelledby="task-title" hidden>
+        <p class="section-name">Выбор инструмента</p>
+        <h2 id="task-title">Задачу ставит<br>архитектор</h2>
+        <div class="task-prompts"><p>Какой результат нужен?</p><p>Чем хотим управлять?</p><p>Как проверим результат?</p></div>
+      </section>
+
+      <section class="slide lecture-page roadmap program-route" id="route" data-tone="ice" aria-labelledby="route-title" hidden>
+        <p class="section-name">Выбор инструмента</p>
+        <h2 id="route-title">Начните с задачи</h2>
+        <div class="route-list">
+          <a href="#site-analysis"><img src="assets/route-tool.svg" alt=""><strong>Информация</strong><span>Найти, разобрать и сопоставить данные об участке</span></a>
+          <a href="#visual"><img src="assets/route-visual.svg" alt=""><strong>Изображения</strong><span>Изменить эскиз или доработать визуализацию</span></a>
+          <a href="#software"><img src="assets/route-software.svg" alt=""><strong>Геометрия</strong><span>Построить модель и проверить её в Rhino или Revit</span></a>
+          <a href="#manege"><img src="assets/route-custom.svg" alt=""><strong>Свои инструменты</strong><span>Собрать скрипт или плагин под повторяющуюся задачу</span></a>
+        </div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="visual" data-tone="blue" aria-labelledby="visual-title" hidden>
+        <p class="section-name">Визуализация</p>
+        <h2 id="visual-title">Как управлять<br>изображением?</h2>
+        <p class="lead">Редактирование в Photoshop и апскейл в ComfyUI.</p>
+        <img class="chapter-object" src="assets/route-visual.svg" alt="">
+      </section>
+
+      <section class="slide case-slide" id="sintez" data-tone="ink" aria-labelledby="sintez-title" hidden>
+        <header class="masthead"><p>Визуализация</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="sintez-title">SINTEZ в Photoshop</h2><p class="case-question">Как использовать генерацию и редактирование прямо в рабочем файле?</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/sintez.jpg" src="assets/sintez.mp4" aria-label="SINTEZ в Photoshop"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Работа с изображением в Photoshop<span>2:33</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide lecture-page resources" id="try-sintez" data-tone="ice" aria-labelledby="try-sintez-title" hidden>
+        <p class="section-name">Визуализация · Photoshop</p>
+        <div class="sintez-copy"><h2 id="try-sintez-title">Попробовать<br>SINTEZ</h2>
+        <p>Наведите камеру на QR-код, чтобы открыть регистрацию.</p>
+        <p class="ref-code">Реферальный код <b>derevopark</b></p></div>
+        <div class="resource-cards"><a href="https://api.sintez.space/register?ref=derevopark" target="_blank" rel="noopener"><img src="assets/qr/sintez.svg" alt="QR-код регистрации в SINTEZ"><strong>Открыть SINTEZ ↗</strong></a></div>
+      </section>
+
+      <section class="slide case-slide" id="comfyui" data-tone="ink" aria-labelledby="comfyui-title" hidden>
+        <header class="masthead"><p>Визуализация</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="comfyui-title">Апскейл в ComfyUI</h2><p class="case-question">Как изменяются детали при увеличении визуализации жилого квартала?</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/comfyui.jpg" src="assets/comfyui.mp4" aria-label="Апскейл в ComfyUI"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Визуализация жилого квартала<span>0:41</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="tool" data-tone="ice" aria-labelledby="tool-title" hidden>
+        <p class="section-name">Свой инструмент</p>
+        <h2 id="tool-title">Участок в<br>Grasshopper</h2>
+        <p class="lead">Застройка, рельеф и пешеходные связи на набережной Амура.</p>
+        <img class="chapter-object" src="assets/route-tool.svg" alt="">
+      </section>
+
+      <section class="slide case-slide" id="site-analysis" data-tone="ink" aria-labelledby="site-title" hidden>
+        <header class="masthead"><p>Свой инструмент</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="site-title">Анализ участка</h2><p class="case-question">Застройка, улицы, рельеф и пешеходные связи вокруг участка. Что меняется при настройке охвата?</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/site.jpg" src="assets/site.mp4" aria-label="Анализ участка"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Хабаровск · Grasshopper<span>1:19</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide lecture-page competition" id="brusnika-site" data-tone="ice" aria-labelledby="brusnika-site-title" hidden>
+        <p class="section-name">Конкурс Брусники · Евроберег, Новосибирск</p>
+        <div class="competition-layout"><div><h2 id="brusnika-site-title">Что можно узнать по одной точке?</h2><p>Мы втроём проектируем общественную уборную на набережной Оби. От организатора получили условную точку размещения.</p><p>По OpenStreetMap проследили подходы из квартала. По архиву Open-Meteo изучили ветер и снег, а по высоте окружающих зданий оценили сезонное затенение.</p></div>
+        <div class="competition-views"><figure id="brusnika-site-0"><img src="assets/fig1_context.png" alt="Дорожки от квартала к набережной · © OpenStreetMap contributors"><figcaption>Дорожки от квартала к набережной · © OpenStreetMap contributors</figcaption></figure>
+<figure id="brusnika-site-1" hidden><img src="assets/site-wind-seasons.webp" alt="Зима и лето · частота направлений ветра · Open-Meteo / ERA5"><figcaption>Зима и лето · частота направлений ветра · Open-Meteo / ERA5</figcaption></figure>
+<figure id="brusnika-site-2" hidden><img src="assets/site-shadow-seasons.webp" alt="Полдень 21 декабря и 21 июня · красная точка обозначает площадку"><figcaption>Полдень 21 декабря и 21 июня · красная точка обозначает площадку</figcaption></figure>
+        <div class="view-choices" role="group" aria-label="Выбрать вид"><button type="button" aria-pressed="true" data-panel="brusnika-site-0">Подходы</button>
+<button type="button" aria-pressed="false" data-panel="brusnika-site-1">Ветер</button>
+<button type="button" aria-pressed="false" data-panel="brusnika-site-2">Тени</button></div></div></div>
+      </section>
+
+      <section class="slide lecture-page competition pavilion-views" id="brusnika-model" data-tone="ink" aria-labelledby="brusnika-model-title" hidden>
+        <p class="section-name">Конкурс Брусники · первый этап</p>
+        <div class="competition-layout"><div><h2 id="brusnika-model-title">От «Зенита» к «Дуге»</h2><p>По схеме участка наметили подходы посетителей и персонала. В брифе закрепили сценарий входа с дорожки под навес.</p><p>В модели «Дуга» керамическая стена поворачивает к тамбуру, а кровля повторяет изгиб. Свет в кабины и холл попадает через колодцы в покрытии.</p></div>
+        <div class="competition-views"><figure id="arc-0"><img src="assets/arc-winter.webp" alt="«Дуга» · зимняя визуализация по модели. Окружение условное."><figcaption>«Дуга» · зимняя визуализация по модели. Окружение условное.</figcaption></figure>
+<figure id="arc-1" hidden><img src="assets/arc-model.webp" alt="Та же геометрия · фасад из модели «Зенит — Дуга»"><figcaption>Та же геометрия · фасад из модели «Зенит — Дуга»</figcaption></figure>
+<figure id="arc-3" hidden><img src="assets/arc-hall.webp" alt="Вариант «Дуга» · дневной свет в холле"><figcaption>Вариант «Дуга» · дневной свет в холле</figcaption></figure>
+<figure id="arc-4" hidden><img src="assets/zenit-hall.webp" alt="Предыдущая итерация «Зенит» · дневной интерьер"><figcaption>Предыдущая итерация «Зенит» · дневной интерьер</figcaption></figure><div class="view-choices" role="group" aria-label="Сравнить модель и визуализации"><button type="button" data-panel="arc-0" aria-pressed="true">Зима</button><button type="button" data-panel="arc-1" aria-pressed="false">Модель</button><button type="button" data-panel="arc-3" aria-pressed="false">Холл</button><button type="button" data-panel="arc-4" aria-pressed="false">«Зенит»</button></div></div></div>
+      </section>
+
+      <section class="slide lecture-page competition pavilion-views" id="brusnika-lanterns" data-tone="ice" aria-labelledby="lanterns-title" hidden>
+        <p class="section-name">Конкурс Брусники · эскизный вариант</p>
+        <div class="competition-layout">
+          <div>
+            <h2 id="lanterns-title">«Три фонаря»</h2>
+            <p>Две стены в зелёной плитке расходятся у входа. Между ними можно укрыться от дождя, а сквозь стекло с дорожки виден тамбур.</p>
+            <p>У каждой кабины свой световой фонарь. Со стороны парка все три видны над козырьком.</p>
+          </div>
+          <div class="competition-views">
+            <figure id="lanterns-park"><img src="assets/lanterns-park.webp" alt="Два закруглённых крыла в зелёной плитке обрамляют вход. На правой стене белая фигура бегуна."><figcaption>Вид с дорожки · эскизная визуализация по модели</figcaption></figure>
+            <figure id="lanterns-model" hidden><img src="assets/lanterns-model.webp" alt="Фронтальный вид модели павильона с тремя световыми фонарями"><figcaption>Фасад модели · три фонаря над входом</figcaption></figure>
+            <figure id="lanterns-entry" hidden><img src="assets/lanterns-entry.webp" alt="Входная лоджия между стенами из зелёной керамики"><figcaption>Под козырьком · подход к остеклённому тамбуру</figcaption></figure>
+            <div class="view-choices" role="group" aria-label="Выбрать ракурс павильона">
+              <button type="button" data-panel="lanterns-park" aria-pressed="true">Из парка</button>
+              <button type="button" data-panel="lanterns-model" aria-pressed="false">Модель</button>
+              <button type="button" data-panel="lanterns-entry" aria-pressed="false">У входа</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="software" data-tone="blue" aria-labelledby="software-title" hidden>
+        <p class="section-name">ИИ в профессиональном софте</p>
+        <h2 id="software-title">Внутри Rhino<br>и Revit</h2>
+        <p class="lead">Три башни, фасад, взрыв-схема. От задания к графу, модели и чертежу.</p>
+        <div class="chapter-software"><img class="chapter-object" src="assets/route-software.svg" alt="">
+          <div class="product-marks"><span><img src="assets/brand-rhino.png" alt="">Rhinoceros</span><span><img src="assets/brand-grasshopper.png" alt="">Grasshopper</span><span><img src="assets/brand-revit.png" alt="">Revit</span></div>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="towers" data-tone="ink" aria-labelledby="towers-title" hidden>
+        <header class="masthead"><p>ИИ в профессиональном софте</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="towers-title">Три башни</h2><p class="case-question">Claude через MCP собирает ансамбль по заданию. Высоту, поворот и сужение башен можно менять в графе.</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/towers.jpg" src="assets/towers.mp4" aria-label="Три башни"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Rhino и Grasshopper<span>2:00</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="case" data-tone="ice" aria-labelledby="title-case" hidden>
+        <header class="masthead">
+          <p>Вайб-проектирование</p>
+          <div class="marks">
+            <img src="assets/kubstu.png" alt="КубГТУ">
+            <img src="assets/icon.png" alt="Арт.Бродский">
+          </div>
+        </header>
+        <div class="case-layout">
+          <div class="case-copy">
+            <p class="case-tool">GPT-6 Astra <b>→</b> MCP <b>→</b> Rhino</p>
+            <h2 id="title-case">БЦ<br>«Сенатор»</h2>
+            <p class="case-question">Какие размеры фасада нужно сверить с исходными данными?</p>
+          </div>
+          <figure class="recording">
+            <div class="movie">
+              <video preload="none" playsinline poster="assets/rhino-frame.jpg" aria-label="Ускоренная запись моделирования БЦ «Сенатор» в Rhino">
+                <source src="assets/rhino.mp4" type="video/mp4">
+              </video>
+              <button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button>
+            </div>
+            <figcaption>Ускоренная запись моделирования <span>1:12</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="vzryv" data-tone="ink" aria-labelledby="vzryv-title" hidden>
+        <header class="masthead"><p>ИИ в профессиональном софте</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="vzryv-title">Взрыв-схема в Revit</h2><p class="case-question">Как разложить здание по уровням и собрать из этих видов лист A1?</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/vzryv.jpg" src="assets/vzryv.mp4" aria-label="Взрыв-схема в Revit"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>От модели к листу A1<span>1:08</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="revit" data-tone="ink" aria-labelledby="revit-title" hidden>
+        <header class="masthead"><p>ИИ в профессиональном софте</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="revit-title">Собор в Revit</h2><p class="case-question">Как из одной команды строится модель Троицкого-Измайловского собора?</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/revit.jpg" src="assets/revit.mp4" aria-label="Собор в Revit"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>GPT-6 Astra через MCP<span>1:31</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="manege" data-tone="ice" aria-labelledby="title-manege" hidden>
+        <header class="masthead">
+          <p>Вайб-проектирование</p>
+          <div class="marks">
+            <img src="assets/kubstu.png" alt="КубГТУ">
+            <img src="assets/icon.png" alt="Арт.Бродский">
+          </div>
+        </header>
+        <div class="case-layout">
+          <div class="case-copy">
+            <p class="case-tool">RhiGhAI · Rhino и Grasshopper</p>
+            <h2 id="title-manege">ЦВЗ<br>«Манеж»</h2>
+            <p class="case-question">Что произойдёт с портиком, если изменить число колонн в графе?</p>
+          </div>
+          <figure class="recording">
+            <div class="movie">
+              <video preload="none" playsinline poster="assets/manege.jpg" aria-label="Построение Манежа с помощью плагина RhiGhAI">
+                <source src="assets/rhighai.mp4" type="video/mp4">
+              </video>
+              <button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button>
+            </div>
+            <figcaption>От запроса к редактируемому графу <span>1:00</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="practice" data-tone="blue" aria-labelledby="practice-title" hidden>
+        <p class="section-name">Расширение архитектурной практики</p>
+        <h2 id="practice-title">Архитектура становится шире</h2>
+        <p class="lead">Архитектурная модель помогает объяснить, как устроено здание. Посмотрим, как об этом рассказать в коротком ролике, а о реставрации — через игру.</p>
+        <img class="chapter-still" src="assets/section-practice.webp" alt="">
+      </section>
+
+      <section class="slide case-slide" id="villa" data-tone="ink" aria-labelledby="villa-title" hidden>
+        <header class="masthead"><p>Расширение архитектурной практики</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="villa-title">Villa Savoye</h2><p class="case-question">Сценарий автора и DWG-модель виллы стали основой анимированного архитектурного разбора с Opus 5.5.</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/villa.jpg" src="assets/villa.mp4" aria-label="Villa Savoye"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Архитектурный разбор<span>0:32</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide case-slide reel-slide" id="agr-reels" data-tone="ice" aria-labelledby="agr-reels-title" hidden>
+        <header class="masthead"><p>Архитектура в коротком видео</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="agr-reels-title">Как рассказать о цифровом двойнике города?</h2><p class="case-question">Три выпуска об АГР-моделях Москвы. Начинаем с городской модели и доходим до одного перехода глазами робота-курьера.</p></div>
+          <div class="reel-strip">
+              <figure class="recording">
+                <div class="movie portrait-reel"><video playsinline preload="none" poster="assets/reels/agr1.jpg" src="assets/reels/agr1.mp4" aria-label="Цифровой двойник"></video><button type="button" class="play" aria-label="Воспроизвести «Цифровой двойник»"><span aria-hidden="true"></span></button></div>
+                <figcaption>Цифровой двойник<span>1:27</span></figcaption>
+              </figure>
+              <figure class="recording">
+                <div class="movie portrait-reel"><video playsinline preload="none" poster="assets/reels/agr2.jpg" src="assets/reels/agr2.mp4" aria-label="Почему правила всё время меняются"></video><button type="button" class="play" aria-label="Воспроизвести «Почему правила всё время меняются»"><span aria-hidden="true"></span></button></div>
+                <figcaption>Почему правила всё время меняются<span>1:10</span></figcaption>
+              </figure>
+              <figure class="recording">
+                <div class="movie portrait-reel"><video playsinline preload="none" poster="assets/reels/agr3.jpg" src="assets/reels/agr3.mp4" aria-label="Как робот видит Москву"></video><button type="button" class="play" aria-label="Воспроизвести «Как робот видит Москву»"><span aria-hidden="true"></span></button></div>
+                <figcaption>Как робот видит Москву<span>1:10</span></figcaption>
+              </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide case-slide" id="game" data-tone="ink" aria-labelledby="game-title" hidden>
+        <header class="masthead"><p>Расширение архитектурной практики</p><div class="marks"><img src="assets/kubstu.png" alt="КубГТУ"><img src="assets/icon.png" alt="Арт.Бродский"></div></header>
+        <div class="case-layout">
+          <div class="case-copy"><h2 id="game-title">Игра «ПРО<br>РЕСТАВРАЦИЮ»</h2><p class="case-question">Как рассказать о реставрации через игру? Посмотрим фрагмент проекта с участием СПбГАСУ.</p></div>
+          <figure class="recording">
+            <div class="movie widescreen"><video preload="none" playsinline poster="assets/game.jpg" src="assets/game.mp4" aria-label="Игра «ПРО РЕСТАВРАЦИЮ»"></video><button class="play" type="button" aria-label="Воспроизвести запись"><span aria-hidden="true"></span></button></div>
+            <figcaption>Запись игры<span>1:36</span></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide lecture-page resources" id="play-game" data-tone="ice" aria-labelledby="play-game-title" hidden>
+        <p class="section-name">Расширение архитектурной практики</p>
+        <h2 id="play-game-title">Попробовать игру</h2>
+        <div class="resource-cards"><a href="https://nakarandashe27.github.io/PROrestavrazia-mini-game/" target="_blank" rel="noopener"><img src="assets/qr/game-web.svg" alt="QR-код веб-версии игры"><strong>Играть в браузере</strong></a><a href="https://t.me/prorestavraziagame_bot?startapp" target="_blank" rel="noopener"><img src="assets/qr/game-telegram.svg" alt="QR-код мини-приложения игры в Telegram"><strong>Играть в Telegram</strong></a></div>
+      </section>
+
+      <section class="slide lecture-page interlude" id="finish" data-tone="ice" aria-labelledby="finish-title" hidden>
+        <p class="section-name">Завершение</p>
+        <h2 id="finish-title">Что попробуете первым?</h2>
+        <p class="lead">Возьмите одну задачу из своего проекта. Сделайте её привычным способом и с помощью ИИ. Сравните оба результата и решите, какой приём стоит повторить.</p>
+      </section>
+
+      <section class="slide lecture-page resources" id="questions" data-tone="ink" aria-labelledby="questions-title" hidden>
+        <h2 id="questions-title">Вопросы?</h2>
+        <p class="channel-name">Мой Telegram-канал · <strong>nakarandashé</strong></p>
+        <div class="resource-cards"><a href="https://t.me/na_karandashe27" target="_blank" rel="noopener"><img src="assets/qr/yaroslav.png" alt="Открыть Telegram-канал nakarandashé"></a></div>
+        <p class="last-note"><a href="https://t.me/nakarandashe27" target="_blank" rel="noopener">Написать мне лично ↗</a></p>
+      </section>
+
+      <section class="slide lecture-page resources" id="contacts" data-tone="ice" aria-labelledby="contacts-title" hidden>
+        <p class="section-name">Краснодар · на следующей неделе</p>
+        <h2 id="contacts-title">Экскурсии в проектные<br>институты и бюро</h2>
+        <p class="tour-invite">Программу экскурсий опубликуем в Telegram-канале школы.</p>
+        <div class="resource-cards">
+          <a href="https://t.me/artbrodsky" target="_blank" rel="noopener"><img src="assets/qr/school.png" alt="QR-код Telegram-канала школы"><strong>Telegram-канал школы</strong></a>
+          <a href="https://artbrodsky.ru/" target="_blank" rel="noopener"><img src="assets/qr/school-website.png" alt="QR-код сайта школы с курсами"><strong>Сайт школы с курсами</strong></a>
+        </div>
+      </section>
+      <section class="slide lecture-page resources" id="replay" data-tone="blue" aria-labelledby="replay-title" hidden>
+        <h2 id="replay-title">Презентация по ссылке</h2>
+        <div class="resource-cards"><a href="https://nakarandashe27.github.io/VibeModelingKubSTU/" target="_blank" rel="noopener"><img src="assets/qr/kubstu-deck.svg" alt="QR-код этой презентации на GitHub Pages"><strong>Открыть презентацию ↗</strong></a></div>
+        <p class="last-note">Листайте слайды, запускайте видео и возвращайтесь к примерам.</p>
+      </section>
+    </div>
+
+    <dialog id="demo-view"><form method="dialog"><strong></strong><a target="_blank" rel="noopener">Открыть отдельно ↗</a><button aria-label="Закрыть просмотр">Закрыть</button></form></dialog>
+    <nav class="controls" aria-label="Управление показом">
+      <button type="button" id="prev" aria-label="Предыдущий слайд">←</button>
+      <select id="jump" aria-label="Перейти к слайду"></select>
+      <button type="button" id="next" aria-label="Следующий слайд">→</button>
+      <button type="button" id="fullscreen">Полный экран</button>
+    </nav>
+  </main>
+</body>
+</html>
+
+
+
